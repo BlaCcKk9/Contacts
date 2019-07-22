@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:icon="@drawable/ic_phone_book"
+            android:id="@+id/contactFragment"
+            android:title="Contact"
+            tools:ignore="HardcodedText"/>
+
+    <item
+            android:icon="@drawable/ic_favorite"
+            android:id="@+id/favoriteFragment"
+            android:title="Favorite"
+            tools:ignore="HardcodedText"/>
+
+    <item
+            android:icon="@drawable/ic_add_contact"
+            android:id="@+id/addContactFragment"
+            android:title="Add Contact"
+            tools:ignore="HardcodedText"/>
+
+</menu>

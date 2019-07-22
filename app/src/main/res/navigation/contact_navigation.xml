@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/contact_navigation"
+        app:startDestination="@id/contactFragment">
+
+    <fragment
+            android:id="@+id/contactFragment"
+            android:name="com.example.contacts.view.fragment.ContactFragment"
+            android:label="fragment_contact"
+            tools:layout="@layout/fragment_contact">
+        <action
+                android:id="@+id/action_contactFragment_to_favoriteFragment"
+                app:destination="@id/favoriteFragment"/>
+        <action
+                android:id="@+id/action_contactFragment_to_addContactFragment"
+                app:destination="@id/addContactFragment"/>
+        <action
+                android:id="@+id/action_contactFragment_to_contactDetailFragment"
+                app:destination="@id/contactDetailFragment"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/favoriteFragment"
+            android:name="com.example.contacts.view.fragment.FavoriteFragment"
+            android:label="fragment_favorite"
+            tools:layout="@layout/fragment_favorite">
+        <action
+                android:id="@+id/action_favoriteFragment_to_contactFragment"
+                app:destination="@id/contactFragment"/>
+        <action
+                android:id="@+id/action_favoriteFragment_to_contactDetailFragment"
+                app:destination="@id/contactDetailFragment"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/addContactFragment"
+            android:name="com.example.contacts.view.fragment.AddContactFragment"
+            android:label="fragment_add_contact"
+            tools:layout="@layout/fragment_add_contact">
+        <action
+                android:id="@+id/action_addContactFragment_to_contactFragment"
+                app:destination="@id/contactFragment"/>
+        <action
+                android:id="@+id/action_addContactFragment_to_mapFragment"
+                app:destination="@id/mapFragment"/>
+        <argument
+                android:name="addressName"
+                app:argType="string"
+                android:defaultValue="Set Location"/>
+    </fragment>
+
+
+    <fragment
+            android:id="@+id/contactDetailFragment"
+            android:name="com.example.contacts.view.fragment.ContactDetailFragment"
+            android:label="fragment_contact_detail"
+            tools:layout="@layout/fragment_contact_detail">
+
+        <action
+                android:id="@+id/action_contactDetailFragment_to_contactFragment"
+                app:destination="@id/contactFragment"/>
+
+        <argument
+            android:name="contactUuid"
+            app:argType="integer"
+            android:defaultValue="0"/>
+
+    </fragment>
+
+
+    <fragment
+            android:id="@+id/mapFragment"
+            android:name="com.example.contacts.view.fragment.MapFragment"
+            android:label="fragment_map"
+            tools:layout="@layout/fragment_map">
+        <action
+                android:id="@+id/action_mapFragment_to_addContactFragment"
+                app:destination="@id/addContactFragment"/>
+    </fragment>
+
+</navigation>
